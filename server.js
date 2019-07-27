@@ -24,6 +24,8 @@ app.use(express.static("public"));
 // Connect to the Mongo DB
 mongoose.connect("mongodb://localhost/userLog", { useNewUrlParser: true });
 
+mongoose.set('useCreateIndex', true);
+
 //when deployed to heroku
 // var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/userLog";
 
@@ -34,7 +36,7 @@ mongoose.connect("mongodb://localhost/userLog", { useNewUrlParser: true });
 app.post("/submit", function(req, res) {
     // Create a new user using req.body
     User.create(req.body)
-      .then(function(dbUser) {
+      .then(function(userLog) {
         // If saved successfully, send the the new User document to the client
         res.json(dbUser);
       })

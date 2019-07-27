@@ -1,8 +1,8 @@
-import React from "react";
+// import React from "react";
 
-function Variable () {
+// function Variable () {
 
 
-}
+// }
 
-export default Variable;
+// export default Variable;
